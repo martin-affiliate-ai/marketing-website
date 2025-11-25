@@ -1,17 +1,16 @@
-import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
+import { Button } from "~/components/ui/button"
+import { HeroSection1 } from "~/components/page/home/hero-section-1"
+import type { Route } from "./+types/home"
 
 export function meta({}: Route.MetaArgs) {
-	return [
-		{ title: "New React Router App" },
-		{ name: "description", content: "Welcome to React Router!" },
-	];
+  return [
+    { title: "Affiliate AI | Reinventing affiliate marketing through intelligent automation" },
+    { name: "description", content: "Reinventing affiliate marketing through intelligent automation" },
+  ]
 }
 
-export function loader({ context }: Route.LoaderArgs) {
-	return { message: context.cloudflare.env.VALUE_FROM_CLOUDFLARE };
-}
-
-export default function Home({ loaderData }: Route.ComponentProps) {
-	return <Welcome message={loaderData.message} />;
+export default function Home() {
+  return (
+    <HeroSection1 />
+  )
 }
