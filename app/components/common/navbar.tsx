@@ -5,12 +5,14 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router";
 
+const authUrl = import.meta.env.VITE_AUTH_URL;
+
 const MENU_ITEMS = [
-  { label: "Products", href: "#" },
-  { label: "Use cases", href: "#" },
-  { label: "Docs", href: "#" },
-  { label: "Pricing", href: "#" },
-  { label: "FAQ", href: "#" },
+  //{ label: "Products", href: "#" },
+  //{ label: "Use cases", href: "#" },
+  //{ label: "Docs", href: "#" },
+  //{ label: "Pricing", href: "#" },
+  //{ label: "FAQ", href: "#" },
 ] as const;
 
 interface NavMenuItemsProps {
@@ -58,8 +60,8 @@ export function Navbar() {
         {/* Desktop Navigation */}
         <div className="hidden w-full flex-row justify-end gap-5 md:flex">
           <NavMenuItems />
-          <Link to="#">
-            <Button>Get started</Button>
+          <Link to={authUrl || "#"}>
+            <Button>Login</Button>
           </Link>
         </div>
 
@@ -67,8 +69,8 @@ export function Navbar() {
         {isMenuOpen && (
           <div className="flex w-full flex-col justify-end gap-5 pb-2.5 md:hidden">
             <NavMenuItems />
-            <Link to="#">
-              <Button className="w-full">Get started</Button>
+            <Link to={authUrl || "#"}>
+              <Button className="w-full">Login</Button>
             </Link>
           </div>
         )}
