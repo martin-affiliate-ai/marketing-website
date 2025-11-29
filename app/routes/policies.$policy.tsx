@@ -34,7 +34,7 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 };
 
 export default function PolicyPage() {
-  const { content, frontmatter } = useLoaderData<typeof loader>();
+  const { content } = useLoaderData<typeof loader>();
 
   return <MarkdownContent content={content} />;
 }

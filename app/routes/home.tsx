@@ -1,4 +1,3 @@
-import { Button } from "~/components/ui/button";
 import { HeroSection1 } from "~/components/page/home/hero-section-1";
 import type { Route } from "./+types/home";
 
@@ -6,7 +5,7 @@ export function meta({}: Route.MetaArgs) {
   return [
     {
       title:
-        "Reinventing affiliate marketing through intelligent automation  | affiliate.ai",
+        "Reinventing affiliate marketing through intelligent automation | affiliate.ai",
     },
     {
       name: "description",
@@ -16,5 +15,9 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  return <HeroSection1 />;
+  return (
+    <div className="container-padding-x container mx-auto">
+      <HeroSection1 />
+    </div>
+  );
 }

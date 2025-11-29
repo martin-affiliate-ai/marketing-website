@@ -1,5 +1,5 @@
 ---
-title: THIS IS FROM THE MARKDOWN COOKIES.md | affiliate.ai
+title: Cookie Policy | affiliate.ai
 description: Read our Cookie Policy
 ---
 

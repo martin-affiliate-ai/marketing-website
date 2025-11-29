@@ -1,7 +1,7 @@
 export function HeroSection1() {
   return (
     <section
-      className="mx-7 min-h-75vh section-padding-y flex items-center justify-center"
+      className="min-h-75vh section-padding-y flex items-center justify-center"
       aria-labelledby="hero-heading"
     >
       <div className="mx-auto max-w-2xl">

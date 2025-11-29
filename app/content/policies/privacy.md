@@ -1,5 +1,5 @@
 ---
-title: THIS IS FROM THE MARKDOWN PRIVACY.md | affiliate.ai
+title: Privcay Policy | affiliate.ai
 description: Read our Privacy Policy
 ---
 
@@ -30,7 +30,7 @@ _Affiliate Intelligence LTD_ (“we,” “our,” or “us”) operates the web
 - **Usage Data:** Through PostHog analytics, we collect data about how you interact with the Service, including pages visited, actions taken, time spent, and feature usage.
 - **Device Information:** IP address, browser type, device identifiers, operating system, and screen resolution.
 - **Session Data:** Authentication sessions managed through Stytch
-- **Cookies and Tracking:** See our [Cookie Policy](/policies/cookie-policy/) for details
+- **Cookies and Tracking:** See our [Cookie Policy](/policies/cookies/) for details
 
 ### 2.3 Affiliate Marketing Data
 

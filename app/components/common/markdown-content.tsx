@@ -8,9 +8,11 @@ interface MarkdownContentProps {
 
 export function MarkdownContent({ content }: MarkdownContentProps) {
   return (
-    <div className="container mx-auto px-4 py-12 max-w-4xl">
-      <div className="prose prose-pink max-w-none">
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+    <div className="container-padding-x container mx-auto flex flex-initial">
+      <div className="flex w-full flex-col items-center py-16">
+        <div className="prose prose-pink">
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+        </div>
       </div>
     </div>
   );
