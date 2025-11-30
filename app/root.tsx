@@ -6,10 +6,19 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
+import posthog from "posthog-js";
+import { PostHogProvider } from "@posthog/react";
 import { Navbar } from "~/components/common/navbar";
 import { Footer } from "~/components/common/footer";
 import type { Route } from "./+types/root";
 import "./app.css";
+
+// Only initialize PostHog in the browser
+if (typeof window !== "undefined") {
+  posthog.init(import.meta.env.VITE_PUBLIC_POSTHOG_KEY, {
+    api_host: import.meta.env.VITE_PUBLIC_POSTHOG_HOST,
+  });
+}
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -32,7 +41,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <PostHogProvider client={posthog}>
+      <Outlet />
+    </PostHogProvider>
+  );
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {

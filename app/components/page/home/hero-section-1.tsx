@@ -1,3 +1,5 @@
+import { PostHogFeature } from "@posthog/react";
+
 export function HeroSection1() {
   return (
     <section
@@ -5,11 +7,13 @@ export function HeroSection1() {
       aria-labelledby="hero-heading"
     >
       <div className="mx-auto max-w-2xl">
-        <div className="mb-8 sm:flex sm:justify-center text-center">
-          <div className="animate-[fadeInUp_0.4s_ease-in-out_0.2s] opacity-0 [animation-fill-mode:forwards] relative rounded-full px-3 py-1 text-sm/5 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20 font-mono dark:text-gray-400 dark:ring-white/10 dark:hover:ring-white/20">
-            Available exclusively to Shopify Customers
+        <PostHogFeature flag="show-shopify-message" match={true}>
+          <div className="mb-8 sm:flex sm:justify-center text-center">
+            <div className="animate-[fadeInUp_0.4s_ease-in-out_0.2s] opacity-0 [animation-fill-mode:forwards] relative rounded-full px-3 py-1 text-sm/5 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20 font-mono dark:text-gray-400 dark:ring-white/10 dark:hover:ring-white/20">
+              Available exclusively to Shopify Customers
+            </div>
           </div>
-        </div>
+        </PostHogFeature>
         <div className="text-center">
           <h1 className="animate-[fadeInUp_0.6s_ease-in-out] opacity-0 [animation-fill-mode:forwards]">
             An ai-powered affiliate network built for what comes next{" "}
