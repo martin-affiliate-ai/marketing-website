@@ -11,7 +11,10 @@ export default defineConfig({
 		reactRouter(),
 		tsconfigPaths(),
 	],
-	resolve: {
+	//ssr: {
+    //	noExternal: ['posthog-js', '@posthog/react']
+  	//},
+  	resolve: {
 		alias: {
 			"~": "/app",
 		},
