@@ -4,6 +4,8 @@
 	"main": "./workers/app.ts",
 	"compatibility_date": "2025-10-08",
 	"compatibility_flags": ["nodejs_compat"],
+	"workers_dev": true,
+	"preview_urls": true,
 	"observability": {
 		"enabled": true
 	},
@@ -14,6 +16,5 @@
 			"zone_name": "affiliate.ai",
 			"custom_domain": true
 		}
-  	],
-	"preview_urls": true
+  	]
 }
