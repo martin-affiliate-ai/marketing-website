@@ -10,12 +10,8 @@
 	"upload_source_maps": true,
 	"routes": [
 		{
-			"pattern": "affiliate.com",
-			"custom_domain": true
-		},
-		{
-			"pattern": "www.affiliate.com",
-			"custom_domain": true
+			"pattern": "www.affiliate.ai",
+			"zone_name": "affiliate.ai"
 		}
   	]
 }
