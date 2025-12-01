@@ -10,14 +10,8 @@
 	"upload_source_maps": true,
 	"routes": [
 		{
-			"pattern": "affiliate.com",
-			"custom_domain": true,
-			"zone_id": "066831e82179cb45a7742d0ecd2f4e81"
-		},
-		{
 			"pattern": "www.affiliate.com",
 			"custom_domain": true,
-			"zone_id": "066831e82179cb45a7742d0ecd2f4e81"
 		}
   	]
 }
