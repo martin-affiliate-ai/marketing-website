@@ -7792,7 +7792,7 @@ function unwrapResponse(response) {
   return contentType && /\bapplication\/json\b/.test(contentType) ? response.body == null ? null : response.json() : response.text();
 }
 const requestHandler = createRequestHandler(
-  () => import("./server-build-BPGUICWO.js").then((n) => n.s),
+  () => import("./server-build-DZDz5xeZ.js").then((n) => n.s),
   "production"
 );
 const app = {
