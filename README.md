@@ -46,6 +46,17 @@ Start the development server with HMR:
 npm run dev
 ```
 
+### Feature development
+
+#### Start new feature
+git checkout main && git pull && git checkout -b feature/name
+
+#### Save work
+git add . && git commit -m "message" && git push
+
+#### After merge
+git checkout main && git pull && git branch -d feature/name
+
 Your application will be available at `http://localhost:5173`.
 
 ## Typegen
