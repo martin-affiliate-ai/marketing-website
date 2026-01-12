@@ -2,10 +2,11 @@ import { Button } from "~/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router";
+import { useFeatureFlagEnabled } from "posthog-js/react";
 
 const authUrl = import.meta.env.VITE_AUTH_URL;
 
-const MENU_ITEMS = [
+const BASE_MENU_ITEMS = [
   //{ label: "Products", href: "#" },
   //{ label: "Use cases", href: "#" },
   //{ label: "Docs", href: "#" },
@@ -13,21 +14,35 @@ const MENU_ITEMS = [
   //{ label: "FAQ", href: "#" },
 ] as const;
 
+const BETA_MENU_ITEMS = [
+  { label: "Advertisers", href: "/for-advertisers" },
+  { label: "Publishers", href: "/for-publishers" },
+  { label: "Features", href: "/features" }
+] as const;
+
 interface NavMenuItemsProps {
   className?: string;
 }
 
-const NavMenuItems = ({ className }: NavMenuItemsProps) => (
-  <div className={`flex flex-col gap-1 md:flex-row ${className ?? ""}`}>
-    {MENU_ITEMS.map(({ label, href }) => (
-      <Link key={label} to={href}>
-        <Button variant="ghost" className="w-full md:w-auto">
-          {label}
-        </Button>
-      </Link>
-    ))}
-  </div>
-);
+const NavMenuItems = ({ className }: NavMenuItemsProps) => {
+  const flagEnabled = useFeatureFlagEnabled("publicBetaAnnoucement");
+
+  const menuItems = flagEnabled
+    ? [...BASE_MENU_ITEMS, ...BETA_MENU_ITEMS]
+    : BASE_MENU_ITEMS;
+
+  return (
+    <div className={`flex flex-col gap-1 md:flex-row ${className ?? ""}`}>
+      {menuItems.map(({ label, href }) => (
+        <Link key={label} to={href}>
+          <Button variant="ghost" className="w-full md:w-auto">
+            {label}
+          </Button>
+        </Link>
+      ))}
+    </div>
+  );
+};
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

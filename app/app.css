@@ -5,6 +5,58 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@utility heading-xl {
+  font-family: var(--font-sans);
+  font-size: 4.5rem;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+
+  @media (max-width: 64rem) {
+    font-size: 2.25rem;
+    line-height: 1.1;
+  }
+}
+
+@utility heading-lg {
+  font-family: var(--font-sans);
+  font-size: 2.25rem;
+  line-height: 1.111;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+
+  @media (max-width: 64rem) {
+    font-size: 1.875rem;
+    line-height: 1.2;
+  }
+}
+
+@utility heading-md {
+  font-family: var(--font-sans);
+  font-size: 1.875rem;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+
+  @media (max-width: 64rem) {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+}
+
+@utility heading-sm {
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  line-height: 1.333;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+
+  @media (max-width: 64rem) {
+    font-size: 1.5rem;
+    line-height: 1.333;
+  }
+}
+
 @theme {
   --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "DM Mono", ui-monospace, SFMono-Regular;
@@ -137,37 +189,6 @@ body {
   button {
     cursor: pointer;
   }
-  h1 {
-    @apply text-5xl tracking-tighter font-extrabold text-balance text-gray-900 sm:text-7xl dark:text-white;
-  }
-  .heading-xl {
-    font-family: var(--font-sans);
-    font-size: 3rem;
-    line-height: 1;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-  }
-  .heading-lg {
-    font-family: var(--font-sans);
-    font-size: 2.25rem;
-    line-height: 1.111;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-  }
-  .heading-md {
-    font-family: var(--font-sans);
-    font-size: 1.875rem;
-    line-height: 1.2;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-  }
-  .heading-sm {
-    font-family: var(--font-sans);
-    font-size: 1.5rem;
-    line-height: 1.333;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-  }
   .container-padding-x {
     padding-inline: 1.5rem;
   }
@@ -189,22 +210,6 @@ body {
 }
 
 @media (max-width: 64rem) {
-  .heading-xl {
-    font-size: 1.875rem;
-    line-height: 1.2;
-  }
-  .heading-lg {
-    font-size: 1.875rem;
-    line-height: 1.2;
-  }
-  .heading-md {
-    font-size: 1.5rem;
-    line-height: 1.2;
-  }
-  .heading-sm {
-    font-size: 1.5rem;
-    line-height: 1.333;
-  }
   .container-padding-x {
     padding-inline: 1.5rem;
   }
