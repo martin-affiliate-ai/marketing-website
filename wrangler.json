@@ -10,6 +10,11 @@
 		"enabled": true
 	},
 	"upload_source_maps": true,
+	"vars": {
+		"VITE_AUTH_URL": "https://auth.affiliate.ai",
+		"VITE_PUBLIC_POSTHOG_KEY": "phc_lMpZqvBDHuxzBWF6mD8yPLxjdFAaoYG4H1liWylEFtE",
+		"VITE_PUBLIC_POSTHOG_HOST": "https://hot-sauce.affiliate.ai"
+	},
 	"routes": [
 		{
 			"pattern": "affiliate.ai",
