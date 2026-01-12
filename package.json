@@ -57,9 +57,9 @@
 		"check": "tsc && react-router build && wrangler deploy --dry-run",
 		"deploy": "wrangler deploy",
 		"dev": "react-router dev",
-		"preview": "npm run build && vite preview",
+		"preview": "pnpm run build && vite preview",
 		"generate-types": "wrangler types",
-		"typecheck": "npm run typegen && tsc -b"
+		"typecheck": "pnpm run typegen && tsc -b"
 	},
 	"type": "module"
 }
