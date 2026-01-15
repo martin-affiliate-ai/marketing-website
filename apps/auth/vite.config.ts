@@ -12,12 +12,9 @@ export default defineConfig({
 		tsconfigPaths(),
 	],
 	server: {
-		port: 5173,
+		port: 5174,
 	},
-	//ssr: {
-    //	noExternal: ['posthog-js', '@posthog/react']
-  	//},
-  	resolve: {
+	resolve: {
 		alias: {
 			"~": "/app",
 		},
