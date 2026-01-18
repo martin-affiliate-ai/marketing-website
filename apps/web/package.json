@@ -32,9 +32,9 @@
 		"tslib": "^2.8.1"
 	},
 	"devDependencies": {
-		"@cloudflare/vite-plugin": "1.7.5",
+		"@cloudflare/vite-plugin": "1.21.0",
 		"@react-router/dev": "7.12.0",
-		"@tailwindcss/vite": "4.1.4",
+		"@tailwindcss/vite": "4.1.18",
 		"@types/node": "24.0.4",
 		"@types/react": "^19.0.0",
 		"@types/react-dom": "^19.0.0",
@@ -43,7 +43,7 @@
 		"typescript": "5.8.3",
 		"vite": "^6.0.0",
 		"vite-tsconfig-paths": "5.1.4",
-		"wrangler": "4.21.x"
+		"wrangler": "4.59.2"
 	},
 	"cloudflare": {
 		"label": "React Router Framework Starter",

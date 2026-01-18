@@ -12,6 +12,7 @@ export default defineConfig({
 		tsconfigPaths(),
 	],
 	server: {
+		host: 'affiliate-ai.local',
 		port: 5173,
 	},
 	//ssr: {
