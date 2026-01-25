@@ -7,7 +7,9 @@
 		"dev": "turbo dev",
 		"deploy": "turbo deploy",
 		"typecheck": "turbo typecheck",
-		"cf-typegen": "turbo cf-typegen"
+		"cf-typegen": "turbo cf-typegen",
+		"kill-ports": "bash scripts/kill-dev-ports.sh",
+		"dev:clean": "pnpm kill-ports && pnpm dev"
 	},
 	"devDependencies": {
 		"@workspace/typescript-config": "workspace:*",
@@ -15,7 +17,7 @@
 		"turbo": "^2.4.2",
 		"typescript": "5.8.3"
 	},
-	"packageManager": "pnpm@10.4.1",
+	"packageManager": "pnpm@10.28.0",
 	"engines": {
 		"node": ">=20"
 	}

@@ -12,13 +12,10 @@ export default defineConfig({
 		tsconfigPaths(),
 	],
 	server: {
-		host: 'affiliate-ai.local',
-		port: 5173,
+		host: 'portal.affiliate-ai.local',
+		port: 5175,
 	},
-	//ssr: {
-    //	noExternal: ['posthog-js', '@posthog/react']
-  	//},
-  	resolve: {
+	resolve: {
 		alias: {
 			"~": "/app",
 		},

@@ -1,6 +1,6 @@
 {
 	"$schema": "./node_modules/wrangler/config-schema.json",
-	"name": "marketing-website",
+	"name": "affiliate-auth",
 	"main": "./workers/app.ts",
 	"compatibility_date": "2025-10-08",
 	"compatibility_flags": ["nodejs_compat"],
@@ -10,19 +10,10 @@
 		"enabled": true
 	},
 	"upload_source_maps": true,
-	"vars": {
-		"VITE_AUTH_URL": "https://auth.affiliate.ai",
-		"VITE_PUBLIC_POSTHOG_KEY": "phc_lMpZqvBDHuxzBWF6mD8yPLxjdFAaoYG4H1liWylEFtE",
-		"VITE_PUBLIC_POSTHOG_HOST": "https://hot-sauce.affiliate.ai"
-	},
+	"vars": {},
 	"routes": [
 		{
-			"pattern": "affiliate.ai",
-			"zone_name": "affiliate.ai",
-			"custom_domain": true
-		},
-		{
-			"pattern": "www.affiliate.ai",
+			"pattern": "auth.affiliate.ai",
 			"zone_name": "affiliate.ai",
 			"custom_domain": true
 		}
