@@ -12,9 +12,11 @@ import {
   BreadcrumbPage,
 } from "@workspace/ui/components/breadcrumb";
 import { AppSidebar } from "~/components/app-sidebar";
+import { AuthGuard } from "~/components/auth-guard";
 
 export default function AppShell() {
   return (
+    <AuthGuard>
     <SidebarProvider>
       <AppSidebar />
       <SidebarInset>
@@ -34,5 +36,6 @@ export default function AppShell() {
         </main>
       </SidebarInset>
     </SidebarProvider>
+    </AuthGuard>
   );
 }
