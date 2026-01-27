@@ -47,39 +47,39 @@ function LoginContent() {
   }, [session]);
 
   const config = {
-    products: [B2BProducts.emailMagicLinks],
+    products: [B2BProducts.emailOtp],
     sessionOptions: {
-      sessionDurationMinutes: 60, // 1 hour (increase in Stytch dashboard for longer sessions)
+      sessionDurationMinutes: 60,
     },
     authFlowType: AuthFlowType.Discovery,
-    emailMagicLinksOptions: {
-      discoveryRedirectURL: import.meta.env.VITE_STYTCH_REDIRECT_URL,
-    },
     cookieOptions: {
       availableToSubdomains: true,
       domain: import.meta.env.VITE_COOKIE_DOMAIN,
     },
   };
 
+  const style = {
+    container: {
+      width: "100%",
+    },
+  };
+
   const callbacks = {
     onEvent: (event: any) => {
-      console.log("Stytch event:", event);
+      //console.log("Stytch event:", event);
       if (event.type === "AUTHENTICATE_FLOW_COMPLETE") {
-        const portalUrl = import.meta.env.VITE_PORTAL_URL;
-        window.location.href = portalUrl;
+        setTimeout(() => {
+          const portalUrl = import.meta.env.VITE_PORTAL_URL;
+          window.location.href = portalUrl;
+        }, 1000);
       }
     },
   };
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="w-full max-w-md px-4">
-        <div className="space-y-2 text-center mb-6">
-          <h1 className="text-2xl font-semibold tracking-tight">
-            Sign in to Affiliate AI
-          </h1>
-        </div>
-        <StytchB2B config={config} callbacks={callbacks} />
+      <div className="flex flex-col max-w-sm w-full px-4">
+        <StytchB2B config={config} styles={style} callbacks={callbacks} />
       </div>
     </div>
   );

@@ -23,22 +23,31 @@ export function AuthGuard({ children }: { children: React.ReactNode }) {
     return <LoadingScreen />;
   }
 
-  return <AuthGuardContent>{children}</AuthGuardContent>;
+  return <AuthGuardClient>{children}</AuthGuardClient>;
 }
 
-function AuthGuardContent({ children }: { children: React.ReactNode }) {
-  const { session, isInitialized } = useStytchMemberSession();
+function AuthGuardClient({ children }: { children: React.ReactNode }) {
+  const authUrl = import.meta.env.VITE_AUTH_URL;
+  const { session } = useStytchMemberSession();
+
+  //console.log("[AuthGuard] session:", session);
 
   useEffect(() => {
-    if (!isInitialized) return;
-
-    if (!session) {
-      const authUrl = import.meta.env.VITE_AUTH_URL;
-      window.location.href = authUrl;
+    if (session) {
+      //console.log("[AuthGuard] → session found, clearing redirect");
+      return;
     }
-  }, [session, isInitialized]);
 
-  if (!isInitialized || !session) {
+    //console.log("[AuthGuard] → no session, scheduling redirect check");
+    const timer = setTimeout(() => {
+      //console.log("[AuthGuard] → redirect check fired, redirecting");
+      window.location.href = authUrl;
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [session, authUrl]);
+
+  if (!session) {
     return <LoadingScreen />;
   }
 
