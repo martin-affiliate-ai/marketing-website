@@ -1,5 +1,5 @@
 import { useParams, useLocation, useNavigate } from "react-router";
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 const STORAGE_KEY = "selected-storefront";
 
@@ -41,23 +41,28 @@ export function useStorefront() {
 
   const isStorefrontRoute = location.pathname.startsWith("/storefronts/");
 
-  // Get storefront from URL param or localStorage
+  // Get storefront from URL param
   const storefrontFromUrl = params.storefront ? fromSlug(params.storefront) : undefined;
-  const storefrontFromStorage = getStoredStorefront();
 
-  const currentStorefront = storefrontFromUrl?.name
-    ?? storefrontFromStorage
-    ?? storefronts[0].name;
+  // Use state to track selection (initialized from localStorage)
+  const [selectedStorefront, setSelectedStorefront] = useState<string>(() => {
+    return getStoredStorefront() ?? storefronts[0].name;
+  });
 
-  // Sync to localStorage when URL changes
+  // URL takes precedence over state
+  const currentStorefront = storefrontFromUrl?.name ?? selectedStorefront;
+
+  // Sync to localStorage and state when URL changes
   useEffect(() => {
     if (storefrontFromUrl) {
       setStoredStorefront(storefrontFromUrl.name);
+      setSelectedStorefront(storefrontFromUrl.name);
     }
   }, [storefrontFromUrl]);
 
   const setStorefront = useCallback((name: string) => {
     setStoredStorefront(name);
+    setSelectedStorefront(name);
 
     // If on a storefront route, navigate to the same page with new storefront
     if (isStorefrontRoute && params.storefront) {

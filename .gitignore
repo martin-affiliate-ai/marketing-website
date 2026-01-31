@@ -204,3 +204,6 @@ dist
 
 ### Turborepo ###
 .turbo/
+
+### Local HTTPS ###
+.certs/

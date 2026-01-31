@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "chrome",
+            "name": "https://auth.affiliate-ai.local:5174",
+            "request": "launch",
+            "url": "https://auth.affiliate-ai.local:5174"
+        }
+    ]
+}

@@ -12,6 +12,8 @@
 		"typecheck": "tsc -b"
 	},
 	"dependencies": {
+		"@stytch/react": "^19.18.1",
+		"@stytch/vanilla-js": "^5.44.2",
 		"@workspace/ui": "workspace:*",
 		"isbot": "5.1.26",
 		"lucide-react": "^0.554.0",
