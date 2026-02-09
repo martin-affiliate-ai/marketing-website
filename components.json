@@ -19,6 +19,11 @@
     "hooks": "~/hooks"
   },
   "registries": {
-    "@shadcndesign": "https://shadcndesign-free.vercel.app/r/{name}.json"
+    "@shadcndesign": {
+      "url": "https://www.shadcndesign.com/api/registry/{name}",
+      "headers": {
+        "X-License-Key": "${SHADCNDESIGN_LICENSE_KEY}"
+      }
+    }
   }
 }
